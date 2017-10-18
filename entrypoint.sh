@@ -19,5 +19,9 @@ printf "${PASSWORD}" > rpcpassword
 printf "${STAKE_ADDR}" > stakeaddr
 printf "${SERVER_URL}" > serverurl
 
+if [ ! -z "$NODE_ID" ]; then
+  printf "${NODE_ID}" > nodeid
+fi
+
 cd ..
 node app.js

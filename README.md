@@ -17,4 +17,5 @@ Docker image for [ZenCash Secure Node tracking app](https://github.com/ZencashOf
 * `PASSWORD` - rpc password
 * `STAKE_ADDR` - Transparent address with 42 coins
 * `SERVER_URL` - http://devtracksys.secnodes.com or https://tracksys.zensystem.io
+* `NODE_ID` - node id (optional)
 
