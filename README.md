@@ -13,10 +13,12 @@ Docker image for [ZenCash Secure Node tracking app](https://github.com/ZencashOf
 * `IPV` - 4 to ipv4, 6 to ipv6
 * `REGION` - Region code : North America(na) Europe(eu) Southeast Asia(sea)
 * `HOME` - ts1.eu, ts1.na or ts1.sea. In accordance with region code 
-* `HOST` - ip your node
+* `HOST` - ip of your node
 * `PORT` - rpc port to connect
 * `USER` - rpc user
 * `PASSWORD` - rpc password
 * `STAKE_ADDR` - Transparent address with 42 coins
 * `NODE_ID` - node id (optional)
+
+Available regions can be found [here](https://securenodes.eu.zensystem.io/api/srvlist)
 
