@@ -1,9 +1,7 @@
 # secnodetracker-docker
 Docker image for [ZenCash Secure Node tracking app](https://github.com/ZencashOfficial/secnodetracker)
 
-## Install
-
-`docker build -t wicowyn/secnodetracker .`
+`docker pull yapiti/secnodetracker`
 
 ## Environment variables
 
