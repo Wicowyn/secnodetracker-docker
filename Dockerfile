@@ -7,7 +7,7 @@ RUN apk update && apk upgrade \
 
 RUN git clone https://github.com/ZencashOfficial/secnodetracker
 WORKDIR /secnodetracker
-RUN git checkout v0.2.0-beta
+RUN git checkout v0.2.1-beta
 
 RUN npm install
 
