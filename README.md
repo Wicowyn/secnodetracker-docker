@@ -6,7 +6,8 @@ Docker image for [ZenCash Secure Node tracking app](https://github.com/ZencashOf
 ## Environment variables
 
 * `HOST` - domain or ip of your node
-* `PORT` - rpc port to connect
+* `NODE_PORT` - node port (default: 9033)
+* `RPC_PORT` - rpc port (default: 8233)
 * `USER` - rpc user
 * `PASSWORD` - rpc password
 

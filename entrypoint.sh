@@ -15,7 +15,9 @@ touch $ZENCONF
 echo "rpcallowip=${HOST}" > $ZENCONF
 echo "rpcbind=${HOST}" >> $ZENCONF
 echo "rpcconnect=${HOST}" >> $ZENCONF
-echo "rpcport=${PORT}" >> $ZENCONF
+
+echo "rpcport=${RPC_PORT}" >> $ZENCONF
+echo "port=${NODE_PORT}" >> $ZENCONF
 
 for ip in `getent hosts $HOST | awk '{ print $1 }'`; do
     echo "externalip=${ip}" >> $ZENCONF
@@ -23,8 +25,5 @@ done
 
 echo "rpcuser=${USER}" >> $ZENCONF
 echo "rpcpassword=${PASSWORD}" >> $ZENCONF
-
-# Bypass inital tracker checkup
-echo "port=1111" >> $ZENCONF
 
 node app

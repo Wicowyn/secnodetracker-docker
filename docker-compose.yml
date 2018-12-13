@@ -19,6 +19,5 @@ services:
       - ./tracker:/nodetracker/config
     environment:
       - HOST=node
-      - PORT=8233
       - USER=rpc_login
       - PASSWORD=rpc_password

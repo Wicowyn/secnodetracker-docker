@@ -3,7 +3,8 @@ FROM node:8-alpine
 LABEL maintener wicowyn@gmail.com
 
 ENV ZENCONF /nodetracker/zen.conf
-ENV PORT 8233
+ENV NODE_PORT 9033
+ENV RPC_PORT 8233
 
 RUN apk update && apk upgrade \
     && apk add --no-cache bash git openssh
