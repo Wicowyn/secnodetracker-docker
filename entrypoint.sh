@@ -1,29 +1,30 @@
 #!/bin/bash
 set -e
 
-mkdir -p /secnodetracker/config
-cd /secnodetracker/config
+CONFIG="/nodetracker/config/config.json"
 
-printf "${EMAIL}" > email
-printf "${FQDN}" > fqdn
-printf "${IPV}" > ipv
-printf "${REGION}" > region
-printf "${HOME}" > home
+if [ ! -f $CONFIG ]; then
+   echo "Configuration file not present"
+   echo "Type \"docker-compose run --rm tracker node setup\""
 
-printf "${HOST}" > rpcallowip
-printf "${HOST}" > rpcbind
-printf "${HOST}" > rpcconnect
-printf "${PORT}" > rpcport
-
-printf "${USER}" > rpcuser
-printf "${PASSWORD}" > rpcpassword
-
-printf "${STAKE_ADDR}" > stakeaddr
-printf "ts1.eu,ts1.na,ts1.sea" > servers
-
-if [ ! -z "$NODE_ID" ]; then
-  printf "${NODE_ID}" > nodeid
+   exit 1
 fi
 
-cd ..
-node app.js
+touch $ZENCONF
+
+echo "rpcallowip=${HOST}" > $ZENCONF
+echo "rpcbind=${HOST}" >> $ZENCONF
+echo "rpcconnect=${HOST}" >> $ZENCONF
+echo "rpcport=${PORT}" >> $ZENCONF
+
+for ip in `getent hosts $HOST | awk '{ print $1 }'`; do
+    echo "externalip=${ip}" >> $ZENCONF
+done
+
+echo "rpcuser=${USER}" >> $ZENCONF
+echo "rpcpassword=${PASSWORD}" >> $ZENCONF
+
+# Bypass inital tracker checkup
+echo "port=1111" >> $ZENCONF
+
+node app

@@ -1,0 +1,24 @@
+version: '2.3'
+
+services:
+  node:
+    image: zencash/zen-node:v2.0.15
+    mem_limit: 4g
+    volumes:
+      - ./data:/mnt/zen
+      - ./zcash-params:/mnt/zcash-params
+    ports:
+      - 9033:9033
+      - 19033:19033
+
+  tracker:
+    image: yapiti/secnodetracker
+    depends_on:
+      - node
+    volumes:
+      - ./tracker:/nodetracker/config
+    environment:
+      - HOST=node
+      - PORT=8233
+      - USER=rpc_login
+      - PASSWORD=rpc_password
