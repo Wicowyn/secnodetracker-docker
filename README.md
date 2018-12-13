@@ -3,7 +3,11 @@ Docker image for [ZenCash Secure Node tracking app](https://github.com/ZencashOf
 
 `docker pull yapiti/secnodetracker`
 
-## Environment variables
+## Configuration
+
+zen.conf is cleared at startup, so don't map it with zen.conf of your node.
+
+### Environment variables
 
 * `HOST` - domain or ip of your node
 * `NODE_PORT` - node port (default: 9033)
