@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:10-alpine
 
 LABEL maintener wicowyn@gmail.com
 
@@ -11,7 +11,7 @@ RUN apk update && apk upgrade \
 
 RUN git clone https://github.com/ZencashOfficial/nodetracker
 WORKDIR /nodetracker
-RUN git checkout v0.3.1-beta
+RUN git checkout v0.4.0-rc1
 
 RUN npm install
 
