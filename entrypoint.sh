@@ -12,9 +12,9 @@ fi
 
 touch $ZENCONF
 
-echo "rpcallowip=${HOST}" > $ZENCONF
-echo "rpcbind=${HOST}" >> $ZENCONF
-echo "rpcconnect=${HOST}" >> $ZENCONF
+echo "rpcallowip=${RPC_HOST}" > $ZENCONF
+echo "rpcbind=${RPC_HOST}" >> $ZENCONF
+echo "rpcconnect=${RPC_HOST}" >> $ZENCONF
 
 echo "rpcport=${RPC_PORT}" >> $ZENCONF
 echo "port=${NODE_PORT}" >> $ZENCONF

@@ -10,6 +10,7 @@ zen.conf is cleared at startup, so don't map it with zen.conf of your node.
 ### Environment variables
 
 * `HOST` - domain or ip of your node
+* `RPC_HOST` - host to use to connect on RPC
 * `NODE_PORT` - node port (default: 9033)
 * `RPC_PORT` - rpc port (default: 8233)
 * `USER` - rpc user
