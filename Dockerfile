@@ -11,7 +11,7 @@ RUN apk update && apk upgrade \
 
 RUN git clone https://github.com/ZencashOfficial/nodetracker
 WORKDIR /nodetracker
-RUN git checkout v0.4.0-rc1
+RUN git checkout v0.4.0
 
 RUN npm install
 
